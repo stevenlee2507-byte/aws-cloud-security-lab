@@ -1,0 +1,16 @@
+# Never commit credentials or secrets
+.aws/
+credentials
+*.pem
+*.key
+*.env
+.env*
+*accessKeys*.csv
+*credentials*.csv
+
+# Unredacted originals (keep these only on your Mac)
+*-unredacted.*
+raw/
+
+# macOS
+.DS_Store
