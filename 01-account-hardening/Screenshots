@@ -1,1 +1,3 @@
-
+git rm -r account-hardening/folder-name
+git commit -m "Remove folder"
+git push
