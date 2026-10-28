@@ -11,33 +11,16 @@ interesting part to read.
 
 ## Entries
 
-### Day 1: Repo setup and locking down the root user
-
-**What I did**
-- Created this repo with secret scanning and push protection turned on
-- Created a new AWS account on the Free plan, region `us-east-1`
-- Added MFA to the root user using [passkey / authenticator app]
-
-**What I learned**
-- The root user can do anything in the account, including closing it, and its permissions can't be restricted. MFA is the main thing standing between a stolen password and a fully compromised account.
-- [one thing that surprised you]
-
-**Next:** billing guardrails so the lab can't run up a surprise bill.
-
----
-
-### Day 2: Billing guardrails
+### October, 27, 2026: Billing guardrails
 
 **What I did**
 - Created a zero-spend budget that emails me if anything costs even $0.01
-- Created a $5 monthly cost budget as a second safety net
-- [Turned on Free Tier usage alerts, if your account shows that option]
+- Created a $5 monthly cost budget as a second alert
 
 **What I learned**
-- Cost alerts are a security control too. A surprise spike in spending is one of the first signs that someone is mining crypto on stolen credentials.
-- [your note]
+- Cost alerts are a security control too. A surprise spike in spending is one of the first signs that someone is stealing assets.
 
-**Next:** stop using root by creating a separate admin user.
+**Next:** account alias, password policy, admins group, and an MFA-protected admin user. 
 
 ---
 
