@@ -21,17 +21,24 @@
 
 ## 1. Locking down the root user
 
-<!-- Day 1: In 2-4 sentences, describe what you did and why. Use your own words. -->
+10/26/26 8:00PM
 
-[What the root user is, why it's dangerous, which MFA type you chose and why]
+- My passkey MFA: I registered a passkey that unlocks with my fingerprint for convenience but also for the security of my physical presence being a must to unlock my account
+- My Access Key: I decided not to use access keys thanks to the root user
+
+- My notes: In this situation I realized the danger of having a root user that controls all my systems which is of course a minus from the convenience of it. So the first idea that came up to help secure my root user is a fingerprint passkey which I believe is a reliable security method thanks to the necessity of the owners physical presence.
 
 ![Root MFA](screenshots/01-root-mfa.png)
 
 ## 2. Billing guardrails
 
-<!-- Day 2 -->
+10/27/26 8:04PM
 
-[What each budget does, the alert thresholds you chose, and why cost is a security signal]
+2 budgets were made today:
+- My zero spend budget: Created with the purpose of being a system that alerts my email in case of a purchase.
+- My $5 monthly budget: Created with the purpose of alerting my email if the time comes where I run out of free credits.
+
+- My notes: In this situation it felt like a security situation where I just made my own security control against any unnecessary/unwanted purchases. In this case the cost alerts being my security controls. In this case the unnecessary purchases can be seen similar to a scenario where hackers (AWS) attack my bank's institution to steal my funds. 
 
 ![Zero-spend budget](screenshots/02-zero-spend-budget.png)
 ![Monthly budget](screenshots/03-monthly-budget.png)
