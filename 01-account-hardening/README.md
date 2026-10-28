@@ -45,15 +45,18 @@
 
 ## 3. A separate admin identity
 
-<!-- Day 3 -->
+10/28/26 4:01 PM
 
-[Why you stopped using root, why permissions go through a group, what's in your password policy]
+I have decided to transition from using a root user for login all the time and have created:
+- A Password policy: To maximize the obscurity of the password, I added as much complex policies as I could including but not limited to: minimum 14 characters, upper and lower case numbers, and etc.
+- An Admins group: Created with administration access policy
+- An IAM User: for my user just kept it simple, "Steven-admin"
+
+- My notes: A reason for my switch to a IAM user and what kind of prompted me to do this is the IAM user's longevity for credentials. Unlike something like a IAM identity center where the credentials are temporary and only lasts for a few hours, a IAM user is just the same credentials until either changed or deleted, making it a simple, but trustable access way. 
 
 ![Password policy](screenshots/04-password-policy.png)
 ![Admins group](screenshots/05-admins-group.png)
 ![Admin MFA](screenshots/06-admin-mfa.png)
-
-**Why an IAM user and not IAM Identity Center?** Identity Center is what most companies use, because it gives short-lived credentials. It requires AWS Organizations, though, and this lab runs on a single Free plan account. A single IAM admin user with MFA and no access keys is the safe option for this setup. [Replace this paragraph if your account did support Identity Center.]
 
 ## 4. Verifying from the command line
 
