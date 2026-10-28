@@ -1,13 +1,6 @@
-# Lab Journal
+# Real world analysis
 
-Short daily notes on what I did, what I learned, and what's next. Newest entries go at the top.
-
-<!--
-HOW TO USE: Each day, copy the matching entry below to the top of the "Entries" section,
-replace the [brackets] with what actually happened, and delete this comment.
-Keep it honest. If something broke or confused you, write that down. It's the most
-interesting part to read.
--->
+First started as journal entry of the day but are now real world comparisons of the situations.
 
 ## Entries
 
@@ -20,23 +13,15 @@ interesting part to read.
 **What I learned**
 - Cost alerts are a security control too. A surprise spike in spending is one of the first signs that someone is stealing assets.
 
-**Next:** account alias, password policy, admins group, and an MFA-protected admin user. 
-
 ---
 
-### Day 3: A separate admin identity
+### October 28, 2026: A separate admin identity
 
-**What I did**
-- Set an account alias and a strict IAM password policy
-- Created an `Admins` group with `AdministratorAccess`, and an IAM user in that group
-- Turned on MFA for the new user, and created no access keys
-- Signed out of root and signed in as the new admin user
-
-**What I learned**
-- Giving permissions to a group instead of directly to a user makes access easier to review and remove later.
-- [your note]
-
-**Next:** prove the setup is correct from the command line.
+**How this fits in the real world**
+- Root: The root user can do anything, even close the account or change billing, and no rules can limit it. In this situation it felt like keeping the master key locked in a safe and using a regular key every day. In real companies root is locked with MFA and barely used, so if a login gets stolen it isn't game over.
+- MFA: Stolen passwords are one of the most common ways hackers get in. In this case MFA is my backup lock, because even if someone has my password they still can't log in without my fingerprint.
+- No access keys: Access keys are permanent and can get leaked on GitHub or saved on laptops. In the 2016 Uber breach, hackers found AWS keys in a private GitHub repo. By not making any keys, there's nothing to leak.
+- Groups: Giving permissions to a group instead of each person makes it easier to see who has access and remove it when someone leaves. At a big company this stops old accounts from keeping access they shouldn't have.
 
 ---
 
