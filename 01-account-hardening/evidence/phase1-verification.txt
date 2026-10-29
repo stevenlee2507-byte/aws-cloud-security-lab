@@ -1,0 +1,67 @@
+=== Phase 1 verification (2026-10-29) ===
+
+--- 1. Who am I signed in as? ---
+{
+    "UserId": "AIDAQLKRXAUTUBU7SX564",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/steven-admin"
+}
+
+--- 2. Root MFA (1 = on) / root access keys (0 = none) ---
+{
+    "RootMFA": 1,
+    "RootAccessKeys": 0
+}
+
+--- 3. Password policy ---
+{
+    "PasswordPolicy": {
+        "MinimumPasswordLength": 14,
+        "RequireSymbols": true,
+        "RequireNumbers": true,
+        "RequireUppercaseCharacters": true,
+        "RequireLowercaseCharacters": true,
+        "AllowUsersToChangePassword": true,
+        "ExpirePasswords": false,
+        "PasswordReusePrevention": 5,
+        "HardExpiry": false
+    }
+}
+
+--- 4. Admin user MFA devices ---
+{
+    "MFADevices": [
+        {
+            "UserName": "steven-admin",
+            "SerialNumber": "arn:aws:iam::123456789012:u2f/user/steven-admin/steven-admin-passkey-FUOZI64K2ZBSDBO56OSRX4S2LY",
+            "EnableDate": "2026-10-28T19:44:19+00:00"
+        }
+    ]
+}
+
+--- 5. Admin user access keys (should be empty) ---
+{
+    "AccessKeyMetadata": []
+}
+
+--- 6. Admins group policy ---
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "AdministratorAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+        }
+    ]
+}
+
+--- 7. Budgets ---
+[
+    {
+        "Name": "Zero-spend-budget",
+        "Limit": "1.0"
+    },
+    {
+        "Name": "monthly-5-dollar-budget",
+        "Limit": "5.0"
+    }
+]
