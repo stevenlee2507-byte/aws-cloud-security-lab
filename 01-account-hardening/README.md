@@ -68,14 +68,4 @@ I used AWS cloud shell which led me to realize I never needed access keys on my 
 
 Full output: [`evidence/`](evidence/)
 
-## What I learned
 
-<!-- Day 5 -->
-
-- [Biggest takeaway]
-- [Something that was harder or different than expected]
-- [What you'd do differently in a real company]
-
-## Next
-
-Phase 2: turning on CloudTrail, GuardDuty, AWS Config, Security Hub, and IAM Access Analyzer.
