@@ -60,17 +60,11 @@ I have decided to transition from using a root user for login all the time and h
 
 ## 4. Verifying from the command line
 
-<!-- Day 4: Paste your redacted CLI output into the evidence/ folder and summarize the results here. -->
+10/29/29 4:42 AM
 
-I used AWS CloudShell so I didn't need to store any access keys on my laptop.
+I used AWS cloud shell which led me to realize I never needed access keys on my MacBook. During my journey of AWS cloud shell, I ran 7 checks on the security settings of my AWS account. My real account id was replaced with "123456789012".
 
-| Check | Command | Result |
-| --- | --- | --- |
-| Signed in as admin, not root | `aws sts get-caller-identity` | [ARN ends in `user/<your-admin-name>`] |
-| Root MFA on, no root keys | `aws iam get-account-summary` | [AccountMFAEnabled = 1, AccountAccessKeysPresent = 0] |
-| Password policy applied | `aws iam get-account-password-policy` | [Min length 14, all character types required] |
-| Admin MFA registered | `aws iam list-mfa-devices --user-name <name>` | [1 device] |
-| Budgets exist | `aws budgets describe-budgets ...` | [2 budgets] |
+- My notes: Today, I realized the importance of the sed part of the script when I did my checks on cloud shell. Thanks to my sed step, my account id was kept safe from public view also keeping my project and future projects safe. And the grep -c retiring 0 proves this. 
 
 Full output: [`evidence/`](evidence/)
 
