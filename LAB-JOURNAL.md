@@ -25,19 +25,13 @@ First started as journal entry of the day but are now real world comparisons of 
 
 ---
 
-### Day 4: Verifying the setup with the AWS CLI
+### November 2, 2026: Consolelogin events
 
-**What I did**
-- Used AWS CloudShell, a terminal in the browser, to run verification commands with no keys on my laptop
-- Confirmed root MFA is on and that no root access keys exist
-- Confirmed the password policy, admin MFA, and budgets from the CLI
-- Added a security alternate contact to the account
-
-**What I learned**
-- Checking settings with commands is more reliable than clicking around, and it's the first step toward automating security checks.
-- [your note]
-
-**Next:** finish the Phase 1 write-up.
+**How this fits in the real world**
+- CloudTrail: CloudTrail is like a security camera for my AWS account. It keeps track of who did what and when. Event history only saves 90 days, so I made a trail that saves everything to S3. In real hacks, attackers can be inside for months before anyone notices, so if the logs are gone there's nothing to look back at.
+- Log file validation: Hackers usually try to delete or turn off logs to hide what they did. Validation lets me prove if any log was changed or deleted.
+- Wrong event: The first event I opened had no user and no error. It turned out to be CloudTrail checking its own bucket, not a person. Real analysts deal with this all the time, since most logs are just AWS services talking to each other. The skill is filtering down to what a person actually did.
+- Regions: My failed logins weren't in US East 1 at all, they were in US East 2. If I only searched one region I would've thought nothing happened. Hackers use this too by working in regions nobody checks, which is why my trail covers every region.
 
 ---
 
