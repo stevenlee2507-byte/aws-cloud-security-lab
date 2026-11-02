@@ -2,7 +2,7 @@
 
 A hands-on lab where I'm building a secure AWS environment from scratch, turning on AWS's detection tools, simulating common cloud misconfigurations and attacks, and detecting and fixing each one.
 
-I'm building this in public. Daily progress notes are in [LAB-JOURNAL.md](LAB-JOURNAL.md).
+I'm building this in public. 
 
 ## Progress
 
