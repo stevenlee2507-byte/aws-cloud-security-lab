@@ -35,14 +35,9 @@ First started as journal entry of the day but are now real world comparisons of 
 
 ---
 
-### Day 5: Phase 1 complete
+### November 3, 2026: multiregion split
 
-**What I did**
-- Finished the Phase 1 write-up with a checklist of every control and its evidence
-- Updated the main README progress
-
-**What I learned**
-- [biggest takeaway from Phase 1]
-- [what you'd do differently]
-
-**Next:** Phase 2, turning on CloudTrail and GuardDuty.
+**How this fits in the real world**
+- Failed vs successful login: I compared my failed and successful logins side by side. Same IP, same browser, a minute apart, so it was just a wrong password, not an attack. Analysts make this call all day. One failed login is normal, but 20 from a foreign IP is not.
+- The code: The script I found loops through every AWS region and checks each one for ConsoleLogin events, so I didn't have to click through 17 regions by hand. I made sure I understood what it did before running it, because running code you don't understand is a real security risk. In the real world, analysts use scripts like this to search huge amounts of logs fast.
+- CloudWatch Logs: I connected my trail to CloudWatch so I can set up alerts next. Saving logs is only half the job, because in the real world you want to know something is happening right away, not weeks later.
