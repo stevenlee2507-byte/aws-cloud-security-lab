@@ -29,3 +29,12 @@ Ran this code i found for cloudshell to investigate the failed investigation on 
 ![Region split](screenshots/04-consolelogin-region-split.png)
 ![Login event](screenshots/05-failed-login-event.png)
 ![Successful login](screenshots/06-successful-mfa-login.png)
+
+## 3. Multiregion trail 
+
+11/3/26 3:38PM
+
+Ran a code in cloudshell that showed all my past history of console logins. From here, I really compared all my past logins which showed the success of my console as I noticed hints such as my one ip address being prevalent in the ip section, a prevalent user id and the response.elements matching what happened compared to the time of the event. Then, I went to cloudshell to create a new trail. This time, however, to fix how the previous trail only logged events in US east 1, I made this region a multi region trail. 
+
+![Comparison](screenshots/03-cloudshell-login-comparison.png)
+![Multiregion](screenshots/04-trail-details-multiregion.png)
