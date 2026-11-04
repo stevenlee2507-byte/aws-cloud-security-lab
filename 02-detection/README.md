@@ -38,3 +38,9 @@ Ran a code in cloudshell that showed all my past history of console logins. From
 
 ![Comparison](screenshots/03-cloudshell-login-comparison.png)
 ![Multiregion](screenshots/04-trail-details-multiregion.png)
+
+11/4/26 5:56 PM
+
+Today, I attempted to prove my trail works only to come upon a new problem. Creating a new login event, I looked for it in my S3 bucket and found its S3 URI. But upon adding my S3 URI to my cloudshell terminal with my code that would have shown me my eventTime, user, etc. nothing popped up. Unfortunately I have a headache unabling me to pursue the root of this problem further. 
+
+![S3 problem](screenshots/07-cloudshell-S3-URI-result.png)
