@@ -27,6 +27,7 @@ First started as journal entry of the day but are now real world comparisons of 
 
 ### November 2, 2026: Consolelogin events
 
+
 **How this fits in the real world**
 - CloudTrail: CloudTrail is like a security camera for my AWS account. It keeps track of who did what and when. Event history only saves 90 days, so I made a trail that saves everything to S3. In real hacks, attackers can be inside for months before anyone notices, so if the logs are gone there's nothing to look back at.
 - Log file validation: Hackers usually try to delete or turn off logs to hide what they did. Validation lets me prove if any log was changed or deleted.
@@ -41,3 +42,12 @@ First started as journal entry of the day but are now real world comparisons of 
 - Failed vs successful login: I compared my failed and successful logins side by side. Same IP, same browser, a minute apart, so it was just a wrong password, not an attack. Analysts make this call all day. One failed login is normal, but 20 from a foreign IP is not.
 - The code: The script I found loops through every AWS region and checks each one for ConsoleLogin events, so I didn't have to click through 17 regions by hand. I made sure I understood what it did before running it, because running code you don't understand is a real security risk. In the real world, analysts use scripts like this to search huge amounts of logs fast.
 - CloudWatch Logs: I connected my trail to CloudWatch so I can set up alerts next. Saving logs is only half the job, because in the real world you want to know something is happening right away, not weeks later.
+
+### November 5, 2026: S3 URI
+
+**How this fits in the real world**
+- ### Reflection
+
+- I thought my login was in the wrong region, but the logs only proved I opened the wrong file. In this situation it taught me to only report what the evidence actually shows. In real companies, a wrong conclusion can get an innocent employee locked out or let a real attacker slip by.
+- The only event in my first file was GetBucketAcl, which was just AWS checking its own bucket, not a person. In this case I learned that a lot of log activity is background noise. SOC analysts deal with thousands of events like this a day, so knowing what normal looks like stops them from wasting hours on false alarms.
+- When I searched every region and found no login, it felt like I failed. But at a real company, a missing login could mean there's a gap in the logging, which means the business can't prove what happened or pass audits. That's why my next step is a controlled sign-in test to prove the trail actually works.
