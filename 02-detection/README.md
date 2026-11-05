@@ -44,3 +44,11 @@ Ran a code in cloudshell that showed all my past history of console logins. From
 Today, I attempted to prove my trail works only to come upon a new problem. Creating a new login event, I looked for it in my S3 bucket and found its S3 URI. But upon adding my S3 URI to my cloudshell terminal with my code that would have shown me my eventTime, user, etc. nothing popped up. Unfortunately I have a headache unabling me to pursue the root of this problem further. 
 
 ![S3 problem](screenshots/07-cloudshell-S3-URI-result.png)
+
+11/5/26 2:10 PM
+
+To recap on why the code wasn’t working yesterday, I am now reinserting the code and adding my S3 URI into cloudshell. This time, something did produce: (1: GetBucketAcl). This is good news and bad news. Good news: it proves that my cloudshell is still actually logging events. Bad news: I logged into my aws in the hour of 15:00UtC but no other event in that hour is a log in event meaning either I logged into the wrong region that day or my system can’t catch log in events. So with further research, I discovered another code that wouldn’t go just through US east 2 region but every region’s events for Nov 4. But upon entering the code, nothing popped up again. Which upon research, showed me there’s no console login for any region during Nov 4. Which I will tackle tomorrow. 
+
+![Code retry](screenshots/08-S3-UCI-code-failure.png)
+![All region failure](screenshots/09-all-region-search-failure.png)
+
