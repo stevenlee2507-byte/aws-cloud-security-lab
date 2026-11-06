@@ -52,3 +52,8 @@ To recap on why the code wasn’t working yesterday, I am now reinserting the co
 ![Code retry](screenshots/08-S3-UCI-code-failure.png)
 ![All region failure](screenshots/09-all-region-search-failure.png)
 
+11/6/26 6:49 PM
+
+To tackle what went wrong yesterday, today I deployed a number of odes. First, to directly tackle the big question of if my seclab-trail is even working, I deployed a code that thankfully gave me an output table proving it does. Then, I deployed another code that discovers if my trail is multiregion and which bucket it answers to, which also thankfully showed me it’s multiregion and reports to the right bucket. So to confirm my last suspicion of if the nov 4 login event was even logged somewhere, I deployed my last code which also thankfully showed me the nov 4 login event I was looking for with the right time to it too. Tomorrow, I will add the S3 UCI and code to cloudshell again and see if this time finally will produce something. 
+
+![check-up](screenshots/10-sectrail-lab-check-up.png)
