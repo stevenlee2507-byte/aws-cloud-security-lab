@@ -57,3 +57,14 @@ To recap on why the code wasn’t working yesterday, I am now reinserting the co
 To tackle what went wrong yesterday, today I deployed a number of odes. First, to directly tackle the big question of if my seclab-trail is even working, I deployed a code that thankfully gave me an output table proving it does. Then, I deployed another code that discovers if my trail is multiregion and which bucket it answers to, which also thankfully showed me it’s multiregion and reports to the right bucket. So to confirm my last suspicion of if the nov 4 login event was even logged somewhere, I deployed my last code which also thankfully showed me the nov 4 login event I was looking for with the right time to it too. Tomorrow, I will add the S3 UCI and code to cloudshell again and see if this time finally will produce something. 
 
 ![check-up](screenshots/10-sectrail-lab-check-up.png)
+
+11/9/26 9:51 PM
+
+Today, I did my final checkup on the S3 bucket to see if it will finally produce my login event on cloudshell after inputting my S3 URI of the event. After my initial login, I logged out again at 8:20 PM and waited 15 minutes for my console to register the event. Then, I added a code that shows every console event during a 3 hour window before I added the code. The code showed me my specific log in event with my S3 URI of the event, which I copied and then used to do my final check of if my cloudshell will finally give me my login event details from the URI and code, proving my seclab-trail does actually records and stores my logins in S3. Finally, I added another code in cloudshell to check if my cloudwatch login groups caught the login event as well, which it proved to do. 
+
+While checking my work, I realized I’ve made a very rookie and foolish mistake. A lot of the times I would look for event timestamp when I should’ve been looking at the creation date/event time of the event. Although, I’m not too sure if this same mistake applies for cloudshell events and etc. but I will keep this in mind now. The new screenshot of the cloudwatch log events is my real log in event. 
+
+![console search](screenshots/11-every-event-console-search.png)
+![S3 URI](screenshots/12-S3-URI-result-success.png)
+![cloudwatch](screenshots/13-login-event-cloudwatch.png)
+![cloudwatch](screenshots/14-login-event-cloudwatch.png)
