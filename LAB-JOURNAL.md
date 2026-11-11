@@ -58,3 +58,15 @@ First started as journal entry of the day but are now real world comparisons of 
 -In this situation, where I had to test out all possible ways my lab went wrong, I learned the importance of why cybersecurity professionals urge the importance of troubleshooting your work. But I also learned to test a theory before reporting it as the answer. In real companies, an analyst who reports a guess as the root cause can send the whole team chasing the wrong problem while the real issue stays open.
 - Before searching my logs again, I checked the trail’s health first: Logging was True, there were no delivery errors, and logs had been delivered just minutes before. In this case I learned that “I found nothing” only means something if you know the tool is working. In real companies, broken setups like mine can still be running dangerously in companies hiding their system flaws.
 - I also compared what my trail saved against Event history, which keeps 90 days of activity even without a trail. In this case it showed me there are two records of activity and that my trail only covers events from when it started. In real companies, auditors and investigators would ask exactly when logging began, because anything before that has no permanent record. 
+
+## November 10, 2026: cloud watch touch up
+-### Reflection
+
+## November 10, 2026: CloudWatch failed-login metric filter
+
+### Reflection
+
+In this session where I set up a metric filter to catch failed console logins, I learned that collecting logs and actually watching them are two different jobs. My trail was already saving every sign-in but nobody gets warned about a log that just sits there. In real companies a team can have perfect logging and still miss an attack because nothing is set up to flag the important events.
+
+- Before building the alarm I had to create a metric filter that scans my CloudTrail logs for ConsoleLogin events with the error message Failed authentication, and adds 1 to a count every time it finds one. In this case I learned that a CloudWatch alarm can't read log text but it can only watch numbers, so the filter is what turns a log into something an alarm can react to. In real companies, security teams build these filters for the events they care about most because there's way too much log data for a person to read.
+- I also learned how the filter pattern works: it only counts an event when both parts are true, the event has to be a console login and it has to have failed. In this case it showed me that a pattern that's too loose would count every normal login and spam me with alerts, and one that's too strict would miss attacks. In real companies analysts touch up their detections so they catch real threats without bombarding the team in false alarms, because a team that gets too many alerts starts ignoring them.
