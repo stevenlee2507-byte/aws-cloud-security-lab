@@ -68,3 +68,10 @@ While checking my work, I realized I’ve made a very rookie and foolish mistake
 ![S3 URI](screenshots/12-S3-URI-result-success.png)
 ![cloudwatch](screenshots/13-login-event-cloudwatch.png)
 ![cloudwatch](screenshots/14-login-event-cloudwatch.png)
+
+11/10/26 10:44 PM
+
+Today, I worked on improving my cloudwatch by first adding a Filter pattern to my metric filter. Then, adding more metric details, I created a new metric filter to my cloudwatch. Thus, now thanks to my metric filter, my cloudwatch immediately filters cloudshell events to point out the failed logins. Next, to add even more security to my cloudwatch, I’ve created an alarm that will immediately alert my email for these discovered failed logins. Tomorrow, I will be orchestrating a failed login in my console and confirm if my alarm is working. 
+
+![metric filter](screenshots/15-metric-filter-creation.png)
+![alarm creation](screenshots/16-alarm-creation.png)
