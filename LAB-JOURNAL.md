@@ -62,10 +62,6 @@ First started as journal entry of the day but are now real world comparisons of 
 ## November 10, 2026: cloud watch touch up
 -### Reflection
 
-## November 10, 2026: CloudWatch failed-login metric filter
-
-### Reflection
-
 In this session where I set up a metric filter to catch failed console logins, I learned that collecting logs and actually watching them are two different jobs. My trail was already saving every sign-in but nobody gets warned about a log that just sits there. In real companies a team can have perfect logging and still miss an attack because nothing is set up to flag the important events.
 
 - Before building the alarm I had to create a metric filter that scans my CloudTrail logs for ConsoleLogin events with the error message Failed authentication, and adds 1 to a count every time it finds one. In this case I learned that a CloudWatch alarm can't read log text but it can only watch numbers, so the filter is what turns a log into something an alarm can react to. In real companies, security teams build these filters for the events they care about most because there's way too much log data for a person to read.
