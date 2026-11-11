@@ -66,3 +66,12 @@ In this session where I set up a metric filter to catch failed console logins, I
 
 - Before building the alarm I had to create a metric filter that scans my CloudTrail logs for ConsoleLogin events with the error message Failed authentication, and adds 1 to a count every time it finds one. In this case I learned that a CloudWatch alarm can't read log text but it can only watch numbers, so the filter is what turns a log into something an alarm can react to. In real companies, security teams build these filters for the events they care about most because there's way too much log data for a person to read.
 - I also learned how the filter pattern works: it only counts an event when both parts are true, the event has to be a console login and it has to have failed. In this case it showed me that a pattern that's too loose would count every normal login and spam me with alerts, and one that's too strict would miss attacks. In real companies analysts touch up their detections so they catch real threats without bombarding the team in false alarms, because a team that gets too many alerts starts ignoring them.
+
+## November 11, 2026: Root account usage alarm
+
+### Reflection
+
+In this session I built a second alarm but this time for anyone using the root account. Since I already had the log group and email topic from yesterday, all I needed was a new filter and alarm. In real companies, once the logging and alerting setup is in place, adding a new detection is fast, which is why teams put in the work to build that setup first.
+
+- Unlike yesterday's filter, this one doesn't care if a login worked or failed. It catches anything done as root. In this case I learned that since I stopped using root back in Phase 1, any root activity at all is a red flag, either it was me on purpose or someone has my password. In real companies, root use gets alerted every single time because root can't be limited by IAM policies, so it's the one account an attacker wants most.
+- The filter also skips actions that AWS services do on root's behalf, so only a real person using root sets it off. In this case it showed me that even a "catch everything" alert still needsto cut out noise. In real companies, a detection that fires on background events gets ignored, and then it's useless when a real attack happens.
