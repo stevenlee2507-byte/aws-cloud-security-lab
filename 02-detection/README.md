@@ -75,3 +75,11 @@ Today, I worked on improving my cloudwatch by first adding a Filter pattern to m
 
 ![metric filter](screenshots/15-metric-filter-creation.png)
 ![alarm creation](screenshots/16-alarm-creation.png)
+
+11/11/26 5:14 PM
+
+Today, I worked on creating my root metric filter. While the metric filter last time was for my IAM user sign ins, this metric filter will be used to detect any unusual activity/denied sign ins for my root user. Then, after creating the root metric filter, of course, created an alarm alongside it, as a filter without an alarm is almost useless. Creating the alarm, I’ve added nearly the same modifications to it as my alarm for my IAM user. Tomorrow, I will be logging out and testing both my IAM user and root user alarms and see if either and hopefully both, will send me an email about the failed log in. 
+
+![metric filter](screenshots/17-root-user-filter.png)
+![alarm creation](screenshots/18-root-user-alarm.png)
+
