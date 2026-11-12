@@ -75,3 +75,12 @@ In this session I built a second alarm but this time for anyone using the root a
 
 - Unlike yesterday's filter, this one doesn't care if a login worked or failed. It catches anything done as root. In this case I learned that since I stopped using root back in Phase 1, any root activity at all is a red flag, either it was me on purpose or someone has my password. In real companies, root use gets alerted every single time because root can't be limited by IAM policies, so it's the one account an attacker wants most.
 - The filter also skips actions that AWS services do on root's behalf, so only a real person using root sets it off. In this case it showed me that even a "catch everything" alert still needsto cut out noise. In real companies, a detection that fires on background events gets ignored, and then it's useless when a real attack happens.
+
+## November 12, 2026: Testing both alarms
+
+### Reflection
+
+In this session I didn't build anything new. I tested both of my alarms, the failed-login one and the root one, by setting them off myself back to back. Before today I only thought they worked. Now I have the emails to prove it. In real companies, teams test their own detections on purpose, because an alert that's never been tested is just a guess.
+
+- I did a failed login as my IAM user and then signed in as root, and each alarm sent me its own email. In this case I learned that a good test doesn't just check that something fired, it checks that the right alarm fired for the right event and that neither one mixed them up. In real companies, detections that overlap or fire on the wrong thing confuse whoever's responding, and they waste time chasing the wrong problem.
+- I used the alarm emails as my proof instead of the CloudWatch alarm page, because an email only shows up if every step worked, from the login to the log to the filter to the alarm to my inbox. In this case it showed me that the best evidence proves the whole chain worked, not just one piece of it. In real companies, teams test the whole path from the event to the alert, because a single problem means the alert never reaches anyone.
