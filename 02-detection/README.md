@@ -83,3 +83,13 @@ Today, I worked on creating my root metric filter. While the metric filter last 
 ![metric filter](screenshots/17-root-user-filter.png)
 ![alarm creation](screenshots/18-root-user-alarm.png)
 
+11/12/25 6:19 PM
+
+Today, I tested both the alarms for my IAM user and root user. At 5:07 PM I signed in to my IAM user 2 times with the wrong password. Then, at 5:09 PM I also signed in to my root user 2 times with the wrong password. After waiting 10 minutes to let the console process the failed log in, I checked the email connected to my aws alarms, and thankfully found both alarms being rung and the reports in my email. 
+
+![1st alarm](screenshots/19-IAM-user-alarm.png)
+![2nd alarm](screenshots/20-root-user-alarm.png)
+
+![metric filter](screenshots/17-root-user-filter.png)
+![alarm creation](screenshots/18-root-user-alarm.png)
+
