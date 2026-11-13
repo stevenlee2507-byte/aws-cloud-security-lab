@@ -93,3 +93,9 @@ Today, I tested both the alarms for my IAM user and root user. At 5:07 PM I sign
 ![metric filter](screenshots/17-root-user-filter.png)
 ![alarm creation](screenshots/18-root-user-alarm.png)
 
+11/13/26 5:16 PM
+
+Last time, we created both an alarm for the failed logins for both my IAM and root user. But to add to the security of my console, I’ve created another alarm. This time, to alert me of any changes to my IAM console permissions. First, of course I created my IAM change metric filter. Then, adding my lab email to the alarm, created it. Then, I tested my alarm by going to my IAM and adding a miscellaneous policy (seclab-test-policy) and deleting it. Thankfully, I received the alert in gmail proving my alarm works. 
+
+![metric filter](screenshots/21-policy-change-metric-filter.png)
+![alarm sc](screenshots/22-email-alarm.png)
