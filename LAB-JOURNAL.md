@@ -84,3 +84,12 @@ In this session I didn't build anything new. I tested both of my alarms, the fai
 
 - I did a failed login as my IAM user and then signed in as root, and each alarm sent me its own email. In this case I learned that a good test doesn't just check that something fired, it checks that the right alarm fired for the right event and that neither one mixed them up. In real companies, detections that overlap or fire on the wrong thing confuse whoever's responding, and they waste time chasing the wrong problem.
 - I used the alarm emails as my proof instead of the CloudWatch alarm page, because an email only shows up if every step worked, from the login to the log to the filter to the alarm to my inbox. In this case it showed me that the best evidence proves the whole chain worked, not just one piece of it. In real companies, teams test the whole path from the event to the alert, because a single problem means the alert never reaches anyone.
+
+## November 13, 2026: IAM policy change alarm
+
+### Reflection
+
+In this session I built a third alarm. It goes off when anyone changes permissions in my account. I tested it by making a harmless test policy. In real companies, permission changes get watched closely, because attackers usually give themselves more access first.
+
+- My filter watches 16 different events, not just one. In this case I learned there’s more than one way to change permissions, so the alarm has to catch all of them. In real companies, attackers use whatever action isn’t being watched.
+- My test policy only lets someone see a list of my S3 buckets. In this case it showed me I can test an alarm without putting my account at risk. In real companies, teams test their alarms with safe actions like this.
