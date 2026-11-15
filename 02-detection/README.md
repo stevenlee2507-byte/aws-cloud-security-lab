@@ -99,3 +99,11 @@ Last time, we created both an alarm for the failed logins for both my IAM and ro
 
 ![metric filter](screenshots/21-policy-change-metric-filter.png)
 ![alarm sc](screenshots/22-email-alarm.png)
+
+11/15/26 4:45 PM
+
+In the past, I’ve been focused a lot on my cloudwatch. But today, I felt compelled to also reinforce the security of my cloudtrail as well. While the cloudwatch helps me keep track of my logs, the cloudshell is important in its own way as it’s the control home of my entire console, where with an addition of a script, can reveal every secret I aim to hide from attackers. That’s why as usual, I first set up my metric filter and then the alarm. And for a note, one thing I learned is that when I first created my alarms it always shown “insufficient data” which I always ignored as the alarm worked anyway, but following the trend where the “insufficient data” changes to “OK”, I realized “insufficient data” just means there were no actions done with the trail since the alarm creation. After testing it by turning off my logging for my trail, I’ve thankfully received the notification on my email, proving the alarm works. 
+
+![metric filter](screenshots/22-cloudtrail-metric-filter.png)
+![alarm sc](screenshots/23-email-alarm.png)
+
