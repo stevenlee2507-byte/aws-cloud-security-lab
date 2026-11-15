@@ -93,3 +93,12 @@ In this session I built a third alarm. It goes off when anyone changes permissio
 
 - My filter watches 16 different events, not just one. In this case I learned there’s more than one way to change permissions, so the alarm has to catch all of them. In real companies, attackers use whatever action isn’t being watched.
 - My test policy only lets someone see a list of my S3 buckets. In this case it showed me I can test an alarm without putting my account at risk. In real companies, teams test their alarms with safe actions like this.
+
+## November 15, 2026: CloudTrail tampering alarm
+
+### Reflection
+
+In this session I built a fourth alarm. It goes off when anyone creates, changes, deletes, stops, or starts a CloudTrail trail. CloudTrail is what records everything in my account, so if someone turns it off, I lose my evidence. In real companies, attackers usually try to shut off logging first so nothing else they do gets recorded.
+
+- My filter watches 5 trail events, including StopLogging, not just DeleteTrail. In this case I learned someone can pause logging without deleting the trail, so it still looks fine at a glance. In real companies, attackers stop logging quietly, do their thing, and turn it back on so nobody notices.
+- My alarm showed “Insufficient data” right after I made it. In this case I learned this just means no matching events have happened yet, not that something is broken. In real companies, security teams have to know the difference between an alarm that’s broken and one that’s just quiet.
