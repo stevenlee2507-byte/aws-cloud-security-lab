@@ -107,3 +107,9 @@ In the past, I’ve been focused a lot on my cloudwatch. But today, I felt compe
 ![metric filter](screenshots/22-cloudtrail-metric-filter.png)
 ![alarm sc](screenshots/23-email-alarm.png)
 
+11/16/26 6:39 PM
+
+Today, I focused on reinforcing the security of my security groups for my console. The security groups of my AWS console are the protective walls that block attackers from my console resources. Which is why they’re so important to protect. As usual, I started by creating my metric filter for my security groups. Then, I created an alarm for the filter as usual. After adding and deleting a new test security group, I thankfully received the alarm in my lab gmail notifying me of the change, proving my alarm works.
+
+![metric filter](screenshots/24-security-group-filter.png)
+![alarm sc](screenshots/25-security-group-alarm.png)
