@@ -102,3 +102,12 @@ In this session I built a fourth alarm. It goes off when anyone creates, changes
 
 - My filter watches 5 trail events, including StopLogging, not just DeleteTrail. In this case I learned someone can pause logging without deleting the trail, so it still looks fine at a glance. In real companies, attackers stop logging quietly, do their thing, and turn it back on so nobody notices.
 - My alarm showed “Insufficient data” right after I made it. In this case I learned this just means no matching events have happened yet, not that something is broken. In real companies, security teams have to know the difference between an alarm that’s broken and one that’s just quiet.
+
+## November 16, 2026: Security group change alarm
+
+### Reflection
+
+In this session I built a fifth alarm. It goes off when anyone creates or deletes a security group, or adds or removes a rule on one. Security groups are the firewalls around everything in AWS, so if someone opens a port they shouldn’t, that’s a way in. In real companies, attackers who get in often open a port so they have an easy way back.
+
+- My filter watches 6 security group events, including AuthorizeSecurityGroupIngress, not just CreateSecurityGroup. In this case I learned someone doesn’t need to make a new group to open a hole. They can just add one bad rule to a group that already exists. In real companies, attackers usually change an existing group quietly because a new one is easier to spot.
+- I tested it with a fake group that only allowed HTTPS from my IP, then deleted it. In this case I learned how to trigger an alarm without actually making my account less safe. In real companies, security teams test their alerts the same way, with harmless changes they clean up right after, so the test itself doesn’t create a risk.
