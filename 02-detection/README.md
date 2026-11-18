@@ -113,3 +113,10 @@ Today, I focused on reinforcing the security of my security groups for my consol
 
 ![metric filter](screenshots/24-security-group-filter.png)
 ![alarm sc](screenshots/25-security-group-alarm.png)
+
+11/16/26
+
+Today, I focused on reinforcing the security of my S3 bucket. To ensure that no attackers can change the policies of my bucket, I first added the metric filter for my bucket. Then, after completing creating the filter for my S3 Bucket, I made its alarm. To test the alarm, however, this time I had to switch up the routine. Usually, I test the alarm by simply adding and deleting whatever the alarm covers. For example, if it’s an alarm for policy, I would just delete and add one. But for this, just adding and deleting a bucket wouldn’t do anything to my alarm. Because my alarm’s filter specifically asks for events concerning the actual policies of a bucket. So I need to add and delete a policy instead. Such shows the importance of the filter and how a weak filter can still let attackers slip in with an attack. Thankfully, after changing the policy of the bucket, I recieved the notification on my email, proving the alarm works. 
+
+![metric filter](screenshots/26-S3-Bucket-filter.png)
+![alarm sc](screenshots/27-S3-Bucket-alarm.png)
