@@ -41,7 +41,11 @@ rescanned in Access Analyzer, and confirmed the object URL returns AccessDenied.
 Keep account-level Block Public Access on. Keep the S3 policy alarm and
 Access Analyzer running. Run scripts/seclab-audit.sh regularly (Session 21).
 
-## 8. Evidence
+## 8. Framework mapping
+CIS AWS Foundations v3.0.0: 4.8 (S3 bucket policy changes monitored),
+2.1.4 (Block Public Access - verify). MITRE ATT&CK: T1530 Data from Cloud Storage.
+
+## 9. Evidence
 screenshots 30-35 
 
 ![bucket public](screenshots/30-test-bucket-public.png)
